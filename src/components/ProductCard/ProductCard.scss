@@ -1,0 +1,157 @@
+/* ==========================================================================
+   ESTILOS DE LAS TARJETAS DE PRODUCTOS INDIVIDUALES (Fijado para Modo Carrusel Horizontal)
+   ========================================================================== */
+
+/* 🛠️ OBLIGATORIO: Forzamos el ancho exacto e integramos la propiedad de centrado magnético */
+.carousel-mode .product-card,
+.products-grid.carousel-mode .product-card {
+  flex: 0 0 290px !important;
+  flex-shrink: 0 !important;
+  width: 290px !important;
+  box-sizing: border-box;
+
+  /* 🎯 ANCLAJE AL CENTRO: Cada tarjeta se encajará exactamente en el medio al deslizar */
+  scroll-snap-align: center; 
+
+  /* --- RESPONSIVE ADAPTACIÓN PARA CELULARES --- */
+  @media (max-width: 768px) {
+    width: 260px !important; 
+    flex: 0 0 260px !important;
+  }
+
+  @media (max-width: 480px) {
+    width: 240px !important; 
+    flex: 0 0 240px !important; /* Optimización fina para pantallas ultra pequeñas */
+  }
+}
+
+.product-card {
+  background: var(--card-bg, #1a1a1a);
+  border: 1px solid var(--card-border, rgba(255, 255, 255, 0.08));
+  border-radius: 20px;
+  overflow: hidden;
+  transition: var(--transition, all 0.3s ease); 
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); 
+}
+
+/* Contenedor Adaptable de la Imagen */
+.product-img-wrapper {
+  position: relative;
+  width: 100%; 
+  height: 320px;
+  overflow: hidden;
+  background-color: #121214; 
+
+  /* 📱 Reducción de altura proporcional en smartphones para mantener la relación de aspecto */
+  @media (max-width: 768px) {
+    height: 280px;
+  }
+  @media (max-width: 480px) {
+    height: 250px;
+  }
+}
+
+.product-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Recorta la foto proporcionalmente alineando todos los carruseles */
+  transition: transform 0.6s; 
+}
+
+.product-card:hover .product-img-wrapper img {
+  transform: scale(1.06);
+}
+
+/* Etiqueta de Descuento (-10%) */
+.tag-discount {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--success, #ff477e);
+  color: #fff;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 8px;
+  z-index: 5;
+}
+
+/* Bloque de Información */
+.product-info {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between; /* Cuadra los botones perfectamente al mismo nivel inferior */
+  box-sizing: border-box;
+  
+  @media (max-width: 480px) {
+    padding: 16px; /* Más compacto en pantallas de celulares */
+  }
+}
+
+.product-info h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--accent, #ff477e);
+  margin-bottom: 20px;
+  
+  @media (max-width: 480px) {
+    margin-bottom: 12px;
+  }
+}
+
+/* BOTÓN WHATSAPP CONSULTA NEÓN (Mantiene tus hermosos degradados) */
+.buy-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, var(--accent, #ff477e) 0%, #ff2a63 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #ffffff !important;
+  font-family: var(--font, sans-serif);
+  font-size: 0.95rem;
+  font-weight: 700; 
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(255, 71, 126, 0.25);
+  outline: none;
+  box-sizing: border-box;
+}
+
+.buy-btn:hover {
+  background: linear-gradient(135deg, #ff2a63 0%, var(--accent, #ff477e) 100%);
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(255, 71, 126, 0.6), 0 0 0 4px rgba(255, 71, 126, 0.15);
+}
+
+.buy-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 71, 126, 0.3);
+}

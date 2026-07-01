@@ -1,0 +1,131 @@
+.promo-banner {
+  width: 100%;
+  padding: 20px 4%;
+  background: #111111; // Fondo oscuro base por si el navegador no soporta transparencia
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.promo-container {
+  width: 100%;
+  max-width: 1200px;
+  background: rgba(25, 20, 22, 0.65); // Fondo oscuro traslúcido con un toque floral sutil
+  backdrop-filter: blur(16px);       // El efecto de desenfoque de vidrio premium (glassmorphism)
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08); // Borde ultra fino y elegante
+  border-radius: 16px;                 // Esquinas suavemente redondeadas como en tu foto
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  box-sizing: border-box;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Insignia / Badge de la izquierda */
+.promo-badge {
+  background: var(--accent, #ff477e); // Usa tu variable rosa o el color directo
+  color: #ffffff;
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 110px;
+  height: 80px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 15px rgba(255, 71, 126, 0.25);
+
+  .promo-percent {
+    font-size: 1.8rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .promo-badge-text {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+    white-space: nowrap;
+  }
+}
+
+/* Bloque de Textos */
+.promo-content {
+  flex: 1;
+
+  h2 {
+    color: #ffffff;
+    font-size: 1.45rem;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.3px;
+
+    .highlight {
+      color: var(--accent, #ff477e); // Destaca el "10% de Descuento" en rosa vivo
+    }
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.7); // Blanco suave para una lectura descansada
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+}
+
+/* Icono de bolsa a la derecha */
+.promo-icon-bag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.25; // Sutil y transparente como en tu diseño original
+  transition: opacity 0.3s ease;
+
+  .bag-emoji {
+    font-size: 2.2rem;
+  }
+}
+
+.promo-container:hover {
+  .promo-icon-bag {
+    opacity: 0.5; // Un pequeño efecto interactivo al pasar el mouse por el banner
+  }
+}
+
+/* --- RESPONSIVE ADAPTACIÓN (Mobile & Tablets) --- */
+@media (max-width: 768px) {
+  .promo-banner {
+    padding: 15px 12px;
+  }
+
+  .promo-container {
+    flex-direction: column; // Se apila verticalmente en celulares para que no se aplaste
+    text-align: center;
+    padding: 24px 20px;
+    gap: 16px;
+  }
+
+  .promo-badge {
+    width: 100%;
+    max-width: 140px;
+    height: 70px;
+  }
+
+  .promo-content {
+    h2 {
+      font-size: 1.25rem;
+    }
+    p {
+      font-size: 0.88rem;
+    }
+  }
+
+  .promo-icon-bag {
+    display: none; // Ocultamos la bolsa en mobile para ahorrar espacio vertical
+  }
+}

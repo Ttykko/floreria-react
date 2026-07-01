@@ -2,9 +2,17 @@
 
 ### 🖼️ Vista Previa del Sistema
 
+#### 💻 Interfaz Principal y Catálogo
+
 | Portada Principal (Hero Carousel) | Catálogo e Interfaz de Productos |
 |:---:|:---:|
-| ![Portada de la Florería](./public/img/hero-desktop.png) | ![Catálogo de Flores](./public/img/catalog-desktop.png) |
+| ![Portada de la Florería](public/img/readme/hero-desktop.png) | ![Catálogo de Flores](public/img/readme/catalog-desktop.png) |
+
+#### 🗺️ Pie de Página y Geolocalización (Radar de Sucursales)
+
+| Seccional Footer e Interactividad de Tiendas |
+|:---:|
+| ![Pie de Página y Radar](public/img/readme/footer-desktop.png) |
 
 ---
 
@@ -18,22 +26,22 @@ El sistema elimina intermediarios automatizando todo el flujo de consulta del ne
 🛠️ Stack Tecnológico
 * **React 18 & TypeScript:** Interfaz de usuario declarativa basada en componentes y tipado estático riguroso para asegurar la integridad de los datos del catálogo en tiempo de ejecución.
 * **Vite:** Herramienta de empaquetado ultra rápida para un entorno de desarrollo ágil y compilaciones de producción optimizadas.
-* **CSS3 Avanzado (Custom Properties & Flexbox):** Sistema de diseño basado en variables y maquetación híbrida (Grid/Flex) que da vida a una interfaz oscura premium (*Vanguard UI*), responsiva y con carruseles adaptados a navegación táctil.
+* **CSS3 / SASS Avanzado (Custom Properties & Flexbox):** Sistema de diseño basado en variables y maquetación híbrida (Grid/Flex) que da vida a una interfaz oscura premium (*Vanguard UI*), responsiva y con carruseles adaptados a navegación táctil.
 
 🛡️ Características Técnicas y Requerimientos Estrictos
 
 1. Sistema de Consulta Directa por Producto Único
 El sitio web no almacena estados de carritos globales ni integra pasarelas de pago tradicionales. En su lugar, implementa dos puntos de contacto clave:
 * **Botón Superior (Navbar / Menú Móvil):** Enlace directo para consultas generales de atención al cliente.
-* **Botón en Tarjeta de Producto ("Consultar al Tiro"):** Evalúa dinámicamente el precio del ramo seleccionado frente a las reglas de negocio (Descuento automático del 10% si supera el umbral de $30.000 CLP) y construye un mensaje de WhatsApp completamente formateado y sanitizado utilizando `encodeURIComponent`.
+* **Botón en Tarjeta de Producto ("Consultar al Tiro"):** Evalúa dinámicamente el precio del ramo seleccionado frente a las reglas de negocio (Descuento automático del 10% si supera el umbral de $30.000 CLP) y construye un mensaje de WhatsApp completamente formateado y sanitizado utilizando `encodeURIComponent`. El sistema reconoce automáticamente identificadores estáticos para agilizar cotizaciones en diseños personalizados o ramos fúnebres.
 
 2. Gestión de Carruseles Dinámicos Independientes
 * **Sincronización con React Hooks:** Implementación del hook `useRef` para almacenar un diccionario de referencias del DOM indexado por secciones. Esto permite controlar de forma independiente el desplazamiento lateral mediante botones y gestos en cada carrusel de categorías sin duplicar lógica ni alterar estados globales de renderizado.
 
 3. Seguridad Estática y Buenas Prácticas
-* **Protección contra Vulnerabilidades:** Implementación de atributos de seguridad en React (`target="_blank" rel="noopener noreferrer"`) en todas las llamadas a la API de WhatsApp para mitigar vectores de ataque por secuestro de pestañas (*Tabnabbing*).
+* **Protección contra Vulnerabilidades:** Implementación de atributos de seguridad en React (`target="_blank" rel="noopener noreferrer"`) en todas las llamadas externas (WhatsApp, Instagram, Threads y Google Maps) para mitigar vectores de ataque por secuestro de pestañas (*Tabnabbing*).
 * **Centralización de Variables de Negocio:** El número telefónico, nombre de la tienda y umbrales promocionales se gestionan desde un único punto de control en `src/config.ts`, aislando los datos sensibles del marcado HTML plano frente a bots de raspado (*scrapers*).
-* **Insignias de Confianza (Trust Badges):** Se integran indicadores informativos de medios de pago (Visa, Mastercard, Transferencia Bancaria) en el pie de página. Estos actúan exclusivamente para instruir al cliente sobre los métodos válidos que el comercio procesa manualmente tras la negociación en el chat.
+* **Radar de Geolocalización Integrado:** Reemplazo de pasarelas redundantes por un módulo avanzado de sucursales físicas en el pie de página. El sistema utiliza un micro-radar con efectos de pulso por ondas SASS en tiempo real e inyecta dinámicamente coordenadas sanitizadas para abrir de forma nativa la aplicación de Google Maps en dispositivos móviles o navegadores de escritorio.
 * **UX Móvil Nativa:** Remoción de controles redundantes de escritorio en teléfonos y adaptación del catálogo a un formato de carrusel horizontal fluido con soporte táctil mediante propiedades de desbordamiento CSS.
 
 📦 Instalación y Despliegue Local

@@ -1,0 +1,258 @@
+/* ==========================================================================
+   PIE DE PÁGINA (CARRUSEL REFACTORIZADO CON LOGO REDONDO NEÓN)
+   ========================================================================== */
+
+.main-footer {
+  background: #050507; 
+  border-top: 1px solid rgba(255, 71, 126, 0.15); 
+  padding: 80px 0 30px 0;
+  margin-top: 100px;
+  box-sizing: border-box;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.5fr; /* Reajustado para simetría perfecta */
+  gap: 40px;
+  padding: 0 4% 50px 4%;
+  box-sizing: border-box;
+}
+
+/* COLUMNA 1: MARCA Y LOGO REDONDO */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  p {
+    color: var(--text-muted, #8a8a93);
+    font-size: 0.95rem;
+    margin: 0;
+    max-width: 280px;
+    line-height: 1.7; 
+  }
+}
+
+.footer-logo-container {
+  display: inline-block;
+  width: fit-content;
+  text-decoration: none;
+  outline: none;
+}
+
+/* 🎯 EL LOGO REDONDO QUE SIENTA GENIAL (Ya tu sabe) */
+.footer-brand-logo {
+  width: 120px;        /* Tamaño ideal para destacar en el footer sin desbordar */
+  height: 120px;
+  object-fit: cover;  /* Corta la imagen perfectamente */
+  background-color: #ffffff; /* Conserva el fondo blanco del círculo limpio */
+  
+  // CORTE CIRCULAR PERFECTO
+  border-radius: 50%; 
+  
+  // EFECTO NEÓN ROSA INTEGRADO
+  border: 2px solid rgba(255, 71, 126, 0.4);
+  box-shadow: 0 4px 20px rgba(255, 71, 126, 0.25), inset 0 0 10px rgba(0, 0, 0, 0.1);
+  
+  transition: var(--transition, all 0.4s cubic-bezier(0.16, 1, 0.3, 1));
+
+  &:hover {
+    transform: scale(1.05) rotate(3deg); /* Micro interactividad moderna */
+    border-color: var(--accent, #ff477e);
+    box-shadow: 0 0 25px var(--accent, #ff477e), 0 4px 15px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* COLUMNAS GENERALES */
+.footer-container h4 {
+  font-size: 1.1rem;
+  margin: 0 0 25px 0;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-container h4::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 25px;
+  height: 2px;
+  background: var(--accent, #ff477e); 
+}
+
+.footer-info p {
+  color: var(--text-main, #ffffff); 
+  font-size: 0.95rem;
+  margin: 0 0 8px 0;
+}
+
+.footer-highlight {
+  color: var(--accent, #ff477e) !important;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(255, 71, 126, 0.3); 
+}
+
+/* REDES SOCIALES (Limpio sin Facebook) */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.03); 
+  border: 1px solid rgba(255, 255, 255, 0.08); 
+  width: 44px;
+  height: 44px;
+  border-radius: 50%; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: var(--transition, all 0.3s ease);
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #ffffff !important;
+  background: var(--accent, #ff477e);
+  border-color: var(--accent, #ff477e);
+  transform: translateY(-5px) rotate(8deg); 
+  box-shadow: 0 6px 20px rgba(255, 71, 126, 0.4);
+}
+
+/* RADAR DE TIENDAS MAPAS */
+.footer-locations {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.locations-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.location-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 12px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: var(--transition, all 0.3s ease);
+
+  &:hover {
+    color: #ffffff !important;
+    background: rgba(255, 71, 126, 0.08);
+    border-color: var(--accent, #ff477e);
+    transform: translateY(-3px) translateX(4px);
+    box-shadow: 0 8px 25px rgba(255, 71, 126, 0.2);
+
+    .radar-icon {
+      color: #ffffff;
+      background: var(--accent, #ff477e);
+      box-shadow: 0 0 15px var(--accent, #ff477e);
+    }
+  }
+}
+
+.radar-icon {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent, #ff477e);
+  font-size: 1rem;
+  transition: var(--transition, all 0.3s ease);
+  flex-shrink: 0;
+
+  .ping {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--accent, #ff477e);
+    border-radius: 50%;
+    animation: radar-pulse 2.2s infinite linear;
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.location-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  text-align: left;
+
+  .loc-title {
+    color: #ffffff;
+    font-size: 0.88rem;
+    font-weight: 600;
+  }
+
+  .loc-desc {
+    color: var(--text-muted, rgba(255, 255, 255, 0.45));
+    font-size: 0.78rem;
+  }
+}
+
+@keyframes radar-pulse {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* BASE INFERIOR */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 30px 4% 0 4%;
+  color: rgba(255, 255, 255, 0.3); 
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .footer-brand {
+    align-items: center;
+    p { margin: 0 auto; }
+  }
+  .social-icons, .footer-locations {
+    justify-content: center;
+    align-items: center;
+  }
+  .location-card {
+    width: 100%;
+    max-width: 320px;
+  }
+}
