@@ -12,19 +12,25 @@ function Navbar({
   isMenuOpen,
   setIsMenuOpen
 }: NavbarProps) {
+  
+  // Generamos el texto codificado de manera segura para la consulta general
+  const mensajeGeneral = encodeURIComponent("Hola, me comunico desde el sitio web para realizar una consulta general.");
+  const whatsappLink = `https://wa.me/${CONFIG.whatsappNumber}?text=${mensajeGeneral}`;
+
   return (
     <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
       <div className="navbar-container">
         
-        {/* 🛠️ LOGO CORPORATIVO CON LA RUTA EXACTA DE PRODUCTOS */}
+        {/* LOGO CORPORATIVO */}
         <a href="#inicio" className="logo-container">
           <img 
-            src="/img/products/logo.jpeg" // 👈 ¡Esta es la ruta real donde está tu archivo!
+            src="/img/products/logo.jpeg" 
             alt={CONFIG.shopName} 
             className="brand-logo" 
           />
         </a>
 
+        {/* BOTÓN MENÚ MÓVIL */}
         <button
           className={`menu-toggle ${isMenuOpen ? "open" : ""}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -35,6 +41,7 @@ function Navbar({
           <span className="bar"></span>
         </button>
 
+        {/* ENLACES DE NAVEGACIÓN */}
         <ul className={`nav-links ${isMenuOpen ? "active" : ""}`}>
           <li>
             <a href="#inicio" onClick={() => setIsMenuOpen(false)}>
@@ -67,13 +74,13 @@ function Navbar({
           </li>
 
           <li>
+            {/* 🛠️ ENLACE DE WHATSAPP GLOBAL CORREGIDO Y VINCULADO A LA CONFIGURACIÓN */}
             <a
-              href={`https://wa.me{CONFIG.whatsappNumber}?text=${encodeURIComponent(
-                "Hola, me comunico desde el sitio web para realizar una consulta general."
-              )}`}
+              href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
               className="nav-btn-whatsapp"
+              onClick={() => setIsMenuOpen(false)}
             >
               Consultas por WhatsApp
             </a>

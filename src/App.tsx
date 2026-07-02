@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
-import Navbar from "./components/Navbar/Navbar";
+// 🛠️ RUTAS EXACTAS CON APUNTADO AL ARCHIVO TSX FINAL
+import Navbar from "./components/Navbar/Navbar"; 
 import Hero from "./components/Hero/Hero";
-import PromoBanner from "./components/PromoBanner/PromoBanner"; // <-- 1. Importación añadida correctamente
+import PromoBanner from "./components/PromoBanner/PromoBanner"; 
 import ProductSection from "./components/ProductSection/ProductSection";
 import Footer from "./components/Footer/Footer";
 
 // Inyectamos los datos limpios desde el archivo de configuración centralizado
 import { HERO_SLIDES } from "./config";
+
 
 export default function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -30,7 +32,7 @@ export default function App() {
 
   // AUTO SLIDE HERO usando los datos centralizados de HERO_SLIDES
   useEffect(() => {
-    if (!HERO_SLIDES.length) return;
+    if (!HERO_SLIDES || !HERO_SLIDES.length) return;
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
     }, 5000);
@@ -55,7 +57,7 @@ export default function App() {
       />
 
       {/* BANNER DE DESCUENTO */}
-      <PromoBanner /> {/* <-- 2. Renderizado añadido en la posición correcta */}
+      <PromoBanner /> 
 
       {/* PRODUCTOS */}
       <ProductSection />

@@ -36,6 +36,8 @@ export const PRODUCTS: Product[] = [
   { id: "flo-44", name: "Maule", category: "Flores", img: "products/44.jpeg" },
   { id: "flo-45", name: "Girasoles", category: "Flores", img: "products/45.jpeg" },
   { id: "flo-48", name: "Tulipan Blanco", category: "Flores", img: "products/48.jpeg" },
+  { id: "flo-65", name: "Clavel", category: "Flores", img: "products/65.jpeg" },
+  { id: "flo-66", name: "Lilium", category: "Flores", img: "products/66.jpeg" },
   
 
   // --- CATEGORÍA: BUCHONES ---
@@ -73,7 +75,7 @@ export const PRODUCTS: Product[] = [
   { id: "rf-12", name: "Rf-12", category: "Ramos Fúnebres", img: "products/31.jpg" },
 
     // --- CATEGORÍA: COMBOS ---
-  { id: "cb-01", name: "Combo Hello Kitty", category: "Combos", img: "products/49.jpeg" },
+  { id: "cb-01", name: "Combo Mix", category: "Combos", img: "products/49.jpeg" },
   { id: "cb-02", name: "Combo Stitch", category: "Combos", img: "products/58.jpeg" },
   { id: "cb-03", name: "Combo Stitch V2", category: "Combos", img: "products/60.jpeg" },
   { id: "cb-04", name: "Combo Stitch V3", category: "Combos", img: "products/59.jpeg" },
