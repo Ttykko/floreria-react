@@ -23,14 +23,12 @@ export const CONFIG = {
 
 export const PRODUCTS: Product[] = [
   // --- CATEGORÍA: FLORES ---
-  { id: "flo-32", name: "Tulipan Rojo", category: "Flores", img: "products/32.jpeg" },
-  { id: "flo-37", name: "Mix Mirate", category: "Flores", img: "products/37.jpeg" },
+  { id: "flo-32", name: "Tulipan Fucsia", category: "Flores", img: "products/32.jpeg" },
   { id: "flo-33", name: "Rosas", category: "Flores", img: "products/33.jpeg" },
   { id: "flo-39", name: "Maule", category: "Flores", img: "products/39.jpeg" },
-  { id: "flo-35", name: "Dulce Corazón", category: "Flores", img: "products/35.jpeg" },
+  { id: "flo-35", name: "Gerberas", category: "Flores", img: "products/35.jpeg" },
   { id: "flo-40", name: "Maule", category: "Flores", img: "products/40.jpeg" },
-  { id: "flo-38", name: "Buchon Amor", category: "Flores", img: "products/38.jpeg" },
-  { id: "flo-41", name: "Romantico Viajero", category: "Flores", img: "products/41.jpeg" },
+  { id: "flo-38", name: "Rosa Unitaria", category: "Flores", img: "products/38.jpeg" },
   { id: "flo-42", name: "Maule", category: "Flores", img: "products/42.jpeg" },
   { id: "flo-43", name: "Maule", category: "Flores", img: "products/43.jpeg" },
   { id: "flo-44", name: "Maule", category: "Flores", img: "products/44.jpeg" },
@@ -38,6 +36,8 @@ export const PRODUCTS: Product[] = [
   { id: "flo-48", name: "Tulipan Blanco", category: "Flores", img: "products/48.jpeg" },
   { id: "flo-65", name: "Clavel", category: "Flores", img: "products/65.jpeg" },
   { id: "flo-66", name: "Lilium", category: "Flores", img: "products/66.jpeg" },
+  { id: "flo-67", name: "Flor del Buque", category: "Flores", img: "products/67.jpeg" },
+  
   
 
   // --- CATEGORÍA: BUCHONES ---
@@ -59,6 +59,8 @@ export const PRODUCTS: Product[] = [
   { id: "bu-16", name: "Especial Mix", price: 50000, category: "Buchones", img: "products/16.jpg" },
   { id: "bu-17", name: "Mix gerber full color", price: 50000, category: "Buchones", img: "products/17.jpg" },
   { id: "bu-18", name: "Desfile Rojo", price: 25000, category: "Buchones", img: "products/18.jpg" },
+  { id: "bu-37", name: "Buque de mano", price: 22000, category: "Buchones", img: "products/37.jpeg" },
+
 
   // --- CATEGORÍA: RAMOS FÚNEBRES ---
   { id: "rf-01", name: "Rf-01", category: "Ramos Fúnebres", img: "products/20.jpg" },
@@ -74,17 +76,17 @@ export const PRODUCTS: Product[] = [
   { id: "rf-11", name: "Rf-11", category: "Ramos Fúnebres", img: "products/30.jpg" },
 
     // --- CATEGORÍA: COMBOS ---
-  { id: "cb-01", name: "Combo Mix", category: "Combos", img: "products/49.jpeg" },
-  { id: "cb-02", name: "Combo Stitch", category: "Combos", img: "products/58.jpeg" },
-  { id: "cb-03", name: "Combo Stitch V2", category: "Combos", img: "products/60.jpeg" },
-  { id: "cb-04", name: "Combo Stitch V3", category: "Combos", img: "products/59.jpeg" },
-  { id: "cb-05", name: "Combo Stitch V4", category: "Combos", img: "products/61.jpeg" },
-  { id: "cb-06", name: "Combo Stitch V5", category: "Combos", img: "products/58.jpeg" },
-  { id: "cb-07", name: "Combo Amor", category: "Combos", img: "products/57.jpeg" },
-  { id: "cb-08", name: "Peluche", category: "Combos", img: "products/50.jpeg" },
-  { id: "cb-09", name: "Peluche Mix", category: "Combos", img: "products/62.jpeg" },
-  { id: "cb-10", name: "Combo Stitch Completo", category: "Combos", img: "products/63.jpeg" },
-  { id: "cb-11", name: "Peluche Especial", category: "Combos", img: "products/64.jpeg" },
+  { id: "cb-01", name: "Flor/Peluche 01", category: "Combos", img: "products/49.jpeg" },
+  { id: "cb-02", name: "Flor/Peluche 02", category: "Combos", img: "products/58.jpeg" },
+  { id: "cb-03", name: "Flor/Peluche 03", category: "Combos", img: "products/60.jpeg" },
+  { id: "cb-04", name: "Flor/Peluche 04", category: "Combos", img: "products/59.jpeg" },
+  { id: "cb-05", name: "Flor/Peluche/globo 01", category: "Combos", img: "products/61.jpeg" },
+  { id: "cb-06", name: "Flor/Peluche 05", category: "Combos", img: "products/58.jpeg" },
+  { id: "cb-07", name: "Flor/Peluche/globo 02", category: "Combos", img: "products/57.jpeg" },
+  { id: "cb-08", name: "Flor/Peluche/globo 03", category: "Combos", img: "products/50.jpeg" },
+  { id: "cb-09", name: "Flor/Peluche/globo 04", category: "Combos", img: "products/62.jpeg" },
+  { id: "cb-10", name: "Flor/Peluche/globo 05", category: "Combos", img: "products/63.jpeg" },
+  { id: "cb-11", name: "Flor/Peluche/globo 06", category: "Combos", img: "products/64.jpeg" },
 
 ];
 
