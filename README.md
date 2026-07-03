@@ -1,5 +1,12 @@
 # 💐 Florería Premium - Landing Page de Conversión Directa
 
+### 🌐 Estado del Proyecto: En Línea
+El sitio web oficial ya se encuentra completamente desplegado y operativo para el público general.
+
+* **Dominio Oficial:** [jardindamore.cl](https://jardindamore.cl)
+
+---
+
 ### 🖼️ Vista Previa del Sistema
 
 #### 💻 Interfaz Principal y Catálogo
@@ -24,7 +31,7 @@ Este desarrollo fue creado bajo una Arquitectura Jamstack Estática para resolve
 El sistema elimina intermediarios automatizando todo el flujo de consulta del negocio directo al canal de comunicación principal del comercio: WhatsApp.
 
 🛠️ Stack Tecnológico
-* **React 18 & TypeScript:** Interfaz de usuario declarativa basada en componentes y tipado estático riguroso para asegurar la integridad de los datos del catálogo en tiempo de ejecución.
+* **React 18 & TypeScript:** Interfaz de usuario declarativa basada en componentes y tipado estático rigso para asegurar la integridad de los datos del catálogo en tiempo de ejecución.
 * **Vite:** Herramienta de empaquetado ultra rápida para un entorno de desarrollo ágil y compilaciones de producción optimizadas.
 * **CSS3 / SASS Avanzado (Custom Properties & Flexbox):** Sistema de diseño basado en variables y maquetación híbrida (Grid/Flex) que da vida a una interfaz oscura premium (*Vanguard UI*), responsiva y con carruseles adaptados a navegación táctil.
 
@@ -69,6 +76,11 @@ npm run dev
 ```
 
 5. Abre en tu navegador la dirección local que indique la terminal (usualmente `http://localhost:5173`).
+
+🚀 Producción y Despliegue
+El sitio cuenta con integración y despliegue continuo (CI/CD). Cada cambio en la rama principal compila automáticamente y se publica de manera directa en el dominio final.
+
+* **URL de Producción:** [https://jardindamore.cl](https://jardindamore.cl)
 
 ⚙️ Configuración del Negocio
 
