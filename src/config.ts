@@ -72,7 +72,6 @@ export const PRODUCTS: Product[] = [
   { id: "rf-09", name: "Rf-09", category: "Ramos Fúnebres", img: "products/28.jpg" },
   { id: "rf-10", name: "Rf-10", category: "Ramos Fúnebres", img: "products/29.jpg" },
   { id: "rf-11", name: "Rf-11", category: "Ramos Fúnebres", img: "products/30.jpg" },
-  { id: "rf-12", name: "Rf-12", category: "Ramos Fúnebres", img: "products/31.jpg" },
 
     // --- CATEGORÍA: COMBOS ---
   { id: "cb-01", name: "Combo Mix", category: "Combos", img: "products/49.jpeg" },
