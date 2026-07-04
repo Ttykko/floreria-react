@@ -1,3 +1,6 @@
+/* ==========================================================================
+   Contenedor Principal del Banner
+   ========================================================================== */
 .promo-banner {
   width: 100%;
   padding: 20px 4%;
@@ -11,21 +14,21 @@
 .promo-container {
   width: 100%;
   max-width: 1200px;
-  background: rgba(25, 20, 22, 0.65); // Tu fondo con toque floral sutil
+  background: rgba(25, 20, 22, 0.65); 
   backdrop-filter: blur(16px);       
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08); 
   border-radius: 16px;                 
   padding: 32px;
   display: flex;
-  flex-direction: column; // En celular se apilan verticalmente
+  flex-direction: column; 
   gap: 32px;
   box-sizing: border-box;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 
   @media (min-width: 768px) {
-    flex-direction: row; // En pantallas grandes van uno al lado del otro
-    align-items: stretch; // Hace que ambas columnas tengan la misma altura
+    flex-direction: row; 
+    align-items: stretch; 
     gap: 40px;
   }
 }
@@ -66,7 +69,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 6px;
-  flex-shrink: 0; // Evita que se deforme o achique
+  flex-shrink: 0; 
 }
 
 .promo-badge-icon {
@@ -79,7 +82,7 @@
   flex-shrink: 0;
 }
 
-/* Estilos para los textos internos */
+/* Estilos para los textos internos de la columna fija */
 .section-body {
   h2 {
     color: #ffffff;
@@ -90,12 +93,12 @@
     letter-spacing: -0.3px;
 
     .highlight {
-      color: var(--accent, #ff477e); // Mantiene tu rosa vivo de marca
+      color: var(--accent, #ff477e); 
     }
   }
 
   p {
-    color: rgba(255, 255, 255, 0.7); // Blanco suave para descansar la vista
+    color: rgba(255, 255, 255, 0.7); 
     font-size: 0.92rem;
     line-height: 1.5;
     margin: 0;
@@ -118,7 +121,102 @@
   }
 }
 
-/* Ajustes Responsive pequeños */
+/* ==========================================================================
+   NUEVO: Estilos del Slider Vertical Continuo e Infinito
+   ========================================================================== */
+.slider-futuristic-container {
+  position: relative;
+  width: 100%;
+  height: 200px; /* Ventana de visualización para ver una tarjeta cómodamente */
+  overflow: hidden;
+  border-radius: 12px;
+
+  .slider-glow-top, .slider-glow-bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 35px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .slider-glow-top {
+    top: 0;
+    background: linear-gradient(to bottom, rgba(25, 20, 22, 0.95), transparent);
+  }
+  .slider-glow-bottom {
+    bottom: 0;
+    background: linear-gradient(to top, rgba(25, 20, 22, 0.95), transparent);
+  }
+}
+
+.slider-track {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;              /* Espaciado uniforme */
+  padding: 8px 4px;
+  animation: scrollVerticalUp 16s linear infinite;
+
+  &:hover {
+    animation-play-state: paused; /* Pausa el scroll automático al pasar el mouse */
+  }
+}
+
+/* Estructura estilizada para las tarjetas deslizantes */
+.slide-card {
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 3px solid var(--accent, #ff477e);
+  border-radius: 4px 12px 12px 4px;
+  padding: 16px;
+  height: 180px;          /* Altura estricta para sincronizar el bucle keyframe */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  .card-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+
+    .card-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      background: rgba(255, 67, 126, 0.15);
+      color: #ff85a2;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    h4 {
+      color: #ffffff;
+      font-size: 1.1rem;
+      margin: 0;
+      font-weight: 700;
+    }
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+}
+
+/* Animación precisa calculando las 2 tarjetas (180px * 2) y sus 2 gaps (16px * 2) */
+@keyframes scrollVerticalUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(calc(-360px - 32px));
+  }
+}
+
+/* Ajustes Responsive */
 @media (max-width: 768px) {
   .promo-banner {
     padding: 15px 12px;
@@ -135,6 +233,25 @@
     }
     p {
       font-size: 0.88rem;
+    }
+  }
+
+  /* Ajustes del slider para adaptarse a pantallas móviles más angostas */
+  .slider-futuristic-container {
+    height: 235px; 
+  }
+
+  .slide-card {
+    height: 215px; 
+    padding: 12px;
+  }
+
+  @keyframes scrollVerticalUp {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(calc(-430px - 32px)); /* Adaptado a la altura móvil */
     }
   }
 }

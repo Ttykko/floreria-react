@@ -2,24 +2,27 @@ import { useState, useEffect } from "react";
 // 🛠️ RUTAS EXACTAS CON APUNTADO AL ARCHIVO TSX FINAL
 import Navbar from "./components/Navbar/Navbar"; 
 import Hero from "./components/Hero/Hero";
-import PromoBanner from "./components/PromoBanner/PromoBanner"; 
+// CAMBIA LA IMPORTACIÓN DE PROMOBANNER POR ESTA:
+import PromoBanner from "./components/PromoBanner/PromoBanner";
 import ProductSection from "./components/ProductSection/ProductSection";
 import Footer from "./components/Footer/Footer";
+// CAMBIA LA IMPORTACIÓN DE PROMOBANNER POR ESTA:
+
 
 // Inyectamos los datos limpios desde el archivo de configuración centralizado
 import { HERO_SLIDES } from "./config";
 
-
 export default function App() {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  // Tipamos los estados explícitamente para evitar advertencias de TypeScript
+  const [currentSlide, setCurrentSlide] = useState<number>(0);
   
   // Estados necesarios obligatorios para el Navbar
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   // Efecto para detectar el scroll de la página y pasarlo al Navbar
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = (): void => {
       if (window.scrollY > 50) {
         setIsScrolled(true);
       } else {
@@ -34,7 +37,7 @@ export default function App() {
   useEffect(() => {
     if (!HERO_SLIDES || !HERO_SLIDES.length) return;
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+      setCurrentSlide((prev: number) => (prev + 1) % HERO_SLIDES.length);
     }, 5000);
 
     return () => clearInterval(interval);
