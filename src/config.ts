@@ -15,11 +15,12 @@ export interface Slide {
 }
 
 export const CONFIG = {
-  whatsappNumber: "56947085345",
+  whatsappNumber: "56912345678", // Número de demostración genérico
   umbralDescuento: 30000,
   porcentajeDescuento: 0.10,
-  shopName: "Florería Boutique"
+  shopName: "Florería Boutique Demo" // Nombre genérico para el portafolio
 };
+
 
 export const PRODUCTS: Product[] = [
   // --- CATEGORÍA: FLORES ---
